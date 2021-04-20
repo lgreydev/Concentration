@@ -14,6 +14,7 @@
 		5E9968D1262EDCAB00C99CE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E9968D0262EDCAB00C99CE9 /* Assets.xcassets */; };
 		5E9968D4262EDCAB00C99CE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9968D2262EDCAB00C99CE9 /* LaunchScreen.storyboard */; };
 		5E9968DD262EDCFA00C99CE9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5E9968DC262EDCFA00C99CE9 /* README.md */; };
+		5E9968E0262EE17100C99CE9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5E9968DF262EE17100C99CE9 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5E9968D3262EDCAB00C99CE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E9968D5262EDCAB00C99CE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E9968DC262EDCFA00C99CE9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5E9968DF262EE17100C99CE9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				5E9968DC262EDCFA00C99CE9 /* README.md */,
+				5E9968DF262EE17100C99CE9 /* .gitignore */,
 				5E9968C6262EDCA700C99CE9 /* Concentration */,
 				5E9968C5262EDCA700C99CE9 /* Products */,
 			);
@@ -127,6 +130,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E9968E0262EE17100C99CE9 /* .gitignore in Resources */,
 				5E9968D4262EDCAB00C99CE9 /* LaunchScreen.storyboard in Resources */,
 				5E9968D1262EDCAB00C99CE9 /* Assets.xcassets in Resources */,
 				5E9968DD262EDCFA00C99CE9 /* README.md in Resources */,
