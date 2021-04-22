@@ -12,7 +12,14 @@ class ViewController: UIViewController {
     // MARK: - Instance Variables
     
     /// The variable that keeps track of the number of card flips
-    var flipCount = 0
+    var flipCount = 0 {
+        didSet {
+            flipCountLabel.text = "Flips: \(flipCount)"
+        }
+    }
+    
+    /// Shows the number of card flips
+    @IBOutlet weak var flipCountLabel: UILabel!
     
     
     
@@ -34,6 +41,8 @@ class ViewController: UIViewController {
     
     /// Flip the card face down if emoji match
     func flipCard(withEmoji emoji: String, on button: UIButton) {
+        flipCount += 1
+        
         if button.currentTitle == emoji {
             button.setTitle("", for: .normal)
             button.backgroundColor = .orange
