@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     /// The array of cards that we get from the View
     @IBOutlet var сardButtons: [UIButton]!
     
-    let emojs = ["👻", "🎃", "🧟‍♂️", "👾"]
+    let emojiChoices = ["👻", "🎃", "👻", "🎃"]
     
     
     // MARK: - IBAction
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     @IBAction func touchCard(_ sender: UIButton) {
         flipCount += 1
         if let numberCard = сardButtons.firstIndex(of: sender) {
-            flipCard(withEmoji: emojs[numberCard], on: sender)
+            flipCard(withEmoji: emojiChoices[numberCard], on: sender)
             print(numberCard)
         }
     }
