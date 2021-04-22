@@ -21,18 +21,21 @@ class ViewController: UIViewController {
     /// Shows the number of card flips
     @IBOutlet weak var flipCountLabel: UILabel!
     
+    /// The array of cards that we get from the View
+    @IBOutlet var сardButtons: [UIButton]!
+    
+    let emojs = ["👻", "🎃", "🧟‍♂️", "👾"]
     
     
     // MARK: - IBAction
     
     /// Call a function that flips the card
     @IBAction func touchCard(_ sender: UIButton) {
-        flipCard(withEmoji: "👻", on: sender)
-    }
-    
-    /// Call a function that flips the card
-    @IBAction func touchSecondCard(_ sender: UIButton) {
-        flipCard(withEmoji: "🎃", on: sender)
+        flipCount += 1
+        if let numberCard = сardButtons.firstIndex(of: sender) {
+            flipCard(withEmoji: emojs[numberCard], on: sender)
+            print(numberCard)
+        }
     }
     
     
@@ -41,11 +44,9 @@ class ViewController: UIViewController {
     
     /// Flip the card face down if emoji match
     func flipCard(withEmoji emoji: String, on button: UIButton) {
-        flipCount += 1
-        
         if button.currentTitle == emoji {
             button.setTitle("", for: .normal)
-            button.backgroundColor = .orange
+            button.backgroundColor = .systemOrange
         } else {
             button.setTitle(emoji, for: .normal)
             button.backgroundColor = .white
