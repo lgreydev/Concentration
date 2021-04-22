@@ -9,7 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: - Instance Variables
     
+    /// The variable that keeps track of the number of card flips
+    var flipCount = 0
     
     
     
