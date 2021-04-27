@@ -10,7 +10,6 @@ import UIKit
 class ViewController: UIViewController {
 
     // MARK: - Variables
-    
     /// The variable that keeps track of the number of card flips
     var flipCount = 0 {
         didSet {
@@ -29,7 +28,6 @@ class ViewController: UIViewController {
     
     
     // MARK: - Methods
-    
     /// Call a function that flips the card
     @IBAction func touchCard(_ sender: UIButton) {
         flipCount += 1

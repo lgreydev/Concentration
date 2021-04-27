@@ -16,6 +16,7 @@
 		5E9968DD262EDCFA00C99CE9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5E9968DC262EDCFA00C99CE9 /* README.md */; };
 		5E9968E0262EE17100C99CE9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5E9968DF262EE17100C99CE9 /* .gitignore */; };
 		5EBE410026381C63002CEDA4 /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE40FF26381C63002CEDA4 /* Concentration.swift */; };
+		5EBE410326381F38002CEDA4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE410226381F38002CEDA4 /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		5E9968DC262EDCFA00C99CE9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5E9968DF262EE17100C99CE9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5EBE40FF26381C63002CEDA4 /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
+		5EBE410226381F38002CEDA4 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				5E9968CD262EDCA700C99CE9 /* Main.storyboard */,
 				5E9968D5262EDCAB00C99CE9 /* Info.plist */,
 				5EBE40FF26381C63002CEDA4 /* Concentration.swift */,
+				5EBE410226381F38002CEDA4 /* Card.swift */,
 			);
 			path = Concentration;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			files = (
 				5E9968CC262EDCA700C99CE9 /* ViewController.swift in Sources */,
 				5EBE410026381C63002CEDA4 /* Concentration.swift in Sources */,
+				5EBE410326381F38002CEDA4 /* Card.swift in Sources */,
 				5E9968C8262EDCA700C99CE9 /* AppDelegate.swift in Sources */,
 				5E9968CA262EDCA700C99CE9 /* SceneDelegate.swift in Sources */,
 			);
