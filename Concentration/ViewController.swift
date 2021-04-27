@@ -8,8 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     // MARK: - Variables
+    /// The game initialization with number of pairs of cards
+    let game = Concentration(numberOfPairsOfCards: 12)
+    
     /// The variable that keeps track of the number of card flips
     var flipCount = 0 {
         didSet {
@@ -27,13 +30,15 @@ class ViewController: UIViewController {
     let emojiChoices = ["👻", "🎃", "👻", "🎃"]
     
     
+    
     // MARK: - Methods
     /// Call a function that flips the card
     @IBAction func touchCard(_ sender: UIButton) {
         flipCount += 1
         if let numberCard = сardButtons.firstIndex(of: sender) {
             flipCard(withEmoji: emojiChoices[numberCard], on: sender)
-            print(numberCard)
+//            print(numberCard)
+            print(game.cards.count)
         }
     }
     
