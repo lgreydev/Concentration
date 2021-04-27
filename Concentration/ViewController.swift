@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    // MARK: - Instance Variables
+    // MARK: - Variables
     
     /// The variable that keeps track of the number of card flips
     var flipCount = 0 {
@@ -24,10 +24,11 @@ class ViewController: UIViewController {
     /// The array of cards that we get from the View
     @IBOutlet var сardButtons: [UIButton]!
     
+    /// Array of emoji for cards
     let emojiChoices = ["👻", "🎃", "👻", "🎃"]
     
     
-    // MARK: - IBAction
+    // MARK: - Methods
     
     /// Call a function that flips the card
     @IBAction func touchCard(_ sender: UIButton) {
@@ -37,10 +38,6 @@ class ViewController: UIViewController {
             print(numberCard)
         }
     }
-    
-    
-    
-    // MARK: - Methods
     
     /// Flip the card face down if emoji match
     func flipCard(withEmoji emoji: String, on button: UIButton) {
