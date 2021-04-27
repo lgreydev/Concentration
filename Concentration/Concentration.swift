@@ -21,8 +21,8 @@ class Concentration {
     }
     
     init(numberOfPairsOfCards: Int) {
-        for id in 1...numberOfPairsOfCards {
-            let card = Card(identifier: id)
+        for _ in 1...numberOfPairsOfCards {
+            let card = Card()
             cards += [card, card]
         }
     }

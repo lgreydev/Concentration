@@ -37,8 +37,6 @@ class ViewController: UIViewController {
         flipCount += 1
         if let numberCard = сardButtons.firstIndex(of: sender) {
             flipCard(withEmoji: emojiChoices[numberCard], on: sender)
-//            print(numberCard)
-            print(game.cards.count)
         }
     }
     
