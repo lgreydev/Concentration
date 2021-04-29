@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     @IBOutlet var сardButtons: [UIButton]!
     
     /// Array of emoji for cards
-    let emojiChoices = ["👻", "🎃", "👻", "🎃","🧟‍♂️", "🧛🏿‍♂️", "😺", "😈"]
+    var emojiChoices = ["👻", "🎃", "🧟‍♂️", "🧛🏿‍♂️", "😺", "😈"]
     var emoji = [Int: String]()
     
     
@@ -60,7 +60,14 @@ class ViewController: UIViewController {
     }
     
     
+    /// By identifier card, select from an array of emoji and place it on the card.
+    /// - Parameter card: current card
+    /// - Returns: return emoji
     func emoji(for card: Card) -> String {
+        if emoji[card.identifier] == nil, emojiChoices.count > 0 {
+            let randomIndex = Int.random(in: 0..<emojiChoices.count)
+            emoji[card.identifier] = emojiChoices.remove(at: randomIndex)
+        }
         return emoji[card.identifier] ?? "?"
     }
     
