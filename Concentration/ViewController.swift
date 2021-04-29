@@ -37,7 +37,6 @@ class ViewController: UIViewController {
     @IBAction func touchCard(_ sender: UIButton) {
         flipCount += 1
         if let cardNumber = сardButtons.firstIndex(of: sender) {
-//            flipCard(withEmoji: emojiChoices[cardNumber], on: sender)
             game.chooseCard(at: cardNumber)
             updateViewFromModel()
         }
@@ -54,11 +53,10 @@ class ViewController: UIViewController {
             } else {
                 button.setTitle("", for: .normal)
                 button.backgroundColor
-                    = card.isMatched ? UIColor.black.withAlphaComponent(0.7) : UIColor.systemOrange
+                    = card.isMatched ? UIColor.black.withAlphaComponent(0) : UIColor.systemOrange
             }
         }
     }
-    
     
     /// By identifier card, select from an array of emoji and place it on the card.
     /// - Parameter card: current card
