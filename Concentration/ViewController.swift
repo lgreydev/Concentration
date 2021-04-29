@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     // MARK: - Variables
     /// The game initialization with number of pairs of cards
-    let game = Concentration(numberOfPairsOfCards: 12)
+    lazy var game = Concentration(numberOfPairsOfCards: сardButtons.count / 2)
     
     /// The variable that keeps track of the number of card flips
     var flipCount = 0 {
@@ -27,7 +27,8 @@ class ViewController: UIViewController {
     @IBOutlet var сardButtons: [UIButton]!
     
     /// Array of emoji for cards
-    let emojiChoices = ["👻", "🎃", "👻", "🎃"]
+    let emojiChoices = ["👻", "🎃", "👻", "🎃","🧟‍♂️", "🧛🏿‍♂️", "😺", "😈"]
+    var emoji = [Int: String]()
     
     
     
@@ -35,20 +36,35 @@ class ViewController: UIViewController {
     /// Call a function that flips the card
     @IBAction func touchCard(_ sender: UIButton) {
         flipCount += 1
-        if let numberCard = сardButtons.firstIndex(of: sender) {
-            flipCard(withEmoji: emojiChoices[numberCard], on: sender)
+        if let cardNumber = сardButtons.firstIndex(of: sender) {
+//            flipCard(withEmoji: emojiChoices[cardNumber], on: sender)
+            game.chooseCard(at: cardNumber)
+            updateViewFromModel()
         }
     }
     
-    /// Flip the card face down if emoji match
-    func flipCard(withEmoji emoji: String, on button: UIButton) {
-        if button.currentTitle == emoji {
-            button.setTitle("", for: .normal)
-            button.backgroundColor = .systemOrange
-        } else {
-            button.setTitle(emoji, for: .normal)
-            button.backgroundColor = .white
+    func updateViewFromModel() {
+        for index in сardButtons.indices {
+            let button = сardButtons[index]
+            let card = game.cards[index]
+            
+            if card.isFaceUp {
+                button.setTitle(emoji(for: card), for: .normal)
+                button.backgroundColor = .white
+            } else {
+                button.setTitle("", for: .normal)
+                button.backgroundColor
+                    = card.isMatched ? UIColor.black.withAlphaComponent(0.7) : UIColor.systemOrange
+            }
         }
     }
+    
+    
+    func emoji(for card: Card) -> String {
+        return emoji[card.identifier] ?? "?"
+    }
+    
+
+    
 }
 
