@@ -11,7 +11,12 @@ class ViewController: UIViewController {
     
     // MARK: - Variables
     /// The game initialization with number of pairs of cards
-    lazy var game = Concentration(numberOfPairsOfCards: сardButtons.count / 2)
+    lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+    
+    /// The number of pairs of cards, which is calculated based on the count of buttons
+    var numberOfPairsOfCards: Int {
+        return сardButtons.count / 2
+    }
     
     /// The variable that keeps track of the number of card flips
     var flipCount = 0 {
