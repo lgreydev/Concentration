@@ -17,6 +17,7 @@ struct Card {
 
     static var identifierFactory = 0
     
+    
     // MARK: - Methods
     /// The function creates an unique identifier number for the card. The number increases by +1 for each iteration.
     /// - Returns: Unique number identifier for card

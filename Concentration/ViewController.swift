@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  Concentration
 //
-//  Created by Sergey Lukaschuk on 20.04.2021.
-//
+//  Created by Sergey Lukaschuk on 20.04.
+
 
 import UIKit
 
@@ -29,7 +29,6 @@ class ViewController: UIViewController {
     /// Array of emoji for cards
     var emojiChoices = ["👻", "🎃", "🧟‍♂️", "🧛🏿‍♂️", "😺", "😈"]
     var emoji = [Int: String]()
-    
     
     
     // MARK: - Methods
@@ -68,8 +67,5 @@ class ViewController: UIViewController {
         }
         return emoji[card.identifier] ?? "?"
     }
-    
-
-    
 }
 
