@@ -9,36 +9,51 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // MARK: - Variables
+    // MARK: - Create Game
     /// The game initialization with number of pairs of cards
-    lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+    private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
     /// The number of pairs of cards, which is calculated based on the count of buttons
     var numberOfPairsOfCards: Int {
         return сardButtons.count / 2
     }
     
+    
+    // MARK: - Counter
     /// The variable that keeps track of the number of card flips
-    var flipCount = 0 {
+    private(set) var flipCount = 0 {
         didSet {
             flipCountLabel.text = "Flips: \(flipCount)"
         }
     }
     
     /// Shows the number of card flips
-    @IBOutlet weak var flipCountLabel: UILabel!
+    @IBOutlet private weak var flipCountLabel: UILabel!
     
-    /// The array of cards that we get from the View
-    @IBOutlet var сardButtons: [UIButton]!
     
+    // MARK: - Emoji
     /// Array of emoji for cards
-    var emojiChoices = ["👻", "🎃", "🧟‍♂️", "🧛🏿‍♂️", "😺", "😈"]
-    var emoji = [Int: String]()
+    private var emojiChoices = ["👻", "🎃", "🧟‍♂️", "🧛🏿‍♂️", "😺", "😈"]
+    private var emoji = [Int: String]()
+    
+    /// By identifier card, select from an array of emoji and place it on the card.
+    /// - Parameter card: current card
+    /// - Returns: return emoji
+    private func emoji(for card: Card) -> String {
+        if emoji[card.identifier] == nil, emojiChoices.count > 0 {
+            let randomIndex = Int.random(in: 0..<emojiChoices.count)
+            emoji[card.identifier] = emojiChoices.remove(at: randomIndex)
+        }
+        return emoji[card.identifier] ?? "?"
+    }
     
     
-    // MARK: - Methods
+    // MARK: - Card
+    /// The array of cards that we get from the View
+    @IBOutlet private var сardButtons: [UIButton]!
+    
     /// Call a function that flips the card
-    @IBAction func touchCard(_ sender: UIButton) {
+    @IBAction private func touchCard(_ sender: UIButton) {
         flipCount += 1
         if let cardNumber = сardButtons.firstIndex(of: sender) {
             game.chooseCard(at: cardNumber)
@@ -46,7 +61,9 @@ class ViewController: UIViewController {
         }
     }
     
-    func updateViewFromModel() {
+    
+    // MARK: - Update View
+    private func updateViewFromModel() {
         for index in сardButtons.indices {
             let button = сardButtons[index]
             let card = game.cards[index]
@@ -61,16 +78,7 @@ class ViewController: UIViewController {
             }
         }
     }
+
     
-    /// By identifier card, select from an array of emoji and place it on the card.
-    /// - Parameter card: current card
-    /// - Returns: return emoji
-    func emoji(for card: Card) -> String {
-        if emoji[card.identifier] == nil, emojiChoices.count > 0 {
-            let randomIndex = Int.random(in: 0..<emojiChoices.count)
-            emoji[card.identifier] = emojiChoices.remove(at: randomIndex)
-        }
-        return emoji[card.identifier] ?? "?"
-    }
 }
 

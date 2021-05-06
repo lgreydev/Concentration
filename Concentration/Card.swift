@@ -15,17 +15,19 @@ struct Card {
     var isMatched = false
     var identifier: Int
 
-    static var identifierFactory = 0
     
+    // MARK: - Identifier
+    private static var identifierFactory = 0
     
-    // MARK: - Methods
     /// The function creates an unique identifier number for the card. The number increases by +1 for each iteration.
     /// - Returns: Unique number identifier for card
-    static func getUniqueIdentifier() -> Int {
+    private static func getUniqueIdentifier() -> Int {
         identifierFactory += 1
         return identifierFactory
     }
     
+    
+    // MARK: - Init
     init() {
         identifier = Card.getUniqueIdentifier()
     }

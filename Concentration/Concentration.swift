@@ -10,10 +10,10 @@ import Foundation
 
 class Concentration {
     
-    // MARK: - Variables
+    // MARK: - Card
     var cards = [Card]()
     
-    var indexOfOneAndOnlyFaceUpCard: Int? {
+    private var indexOfOneAndOnlyFaceUpCard: Int? {
         get {
             var foundIndex: Int?
             for index in cards.indices {
@@ -36,8 +36,6 @@ class Concentration {
         }
     }
     
-    
-    // MARK: - Methods
     func chooseCard(at index: Int) {
         if !cards[index].isMatched {
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
@@ -52,6 +50,8 @@ class Concentration {
         }
     }
     
+    
+    // MARK: - Init
     init(numberOfPairsOfCards: Int) {
         for _ in 1...numberOfPairsOfCards {
             let card = Card()
