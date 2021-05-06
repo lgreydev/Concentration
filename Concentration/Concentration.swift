@@ -37,6 +37,7 @@ class Concentration {
     }
     
     func chooseCard(at index: Int) {
+        assert(cards.indices.contains(index), "is not index \(index)")
         if !cards[index].isMatched {
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
                 if cards[matchIndex].identifier == cards[index].identifier {
@@ -53,6 +54,7 @@ class Concentration {
     
     // MARK: - Init
     init(numberOfPairsOfCards: Int) {
+        assert(numberOfPairsOfCards > 0, "You need at least one pair of cards to play, numberOfPairsOfCards = \(numberOfPairsOfCards)")
         for _ in 1...numberOfPairsOfCards {
             let card = Card()
             cards += [card, card]
