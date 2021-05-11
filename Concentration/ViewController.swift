@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     // MARK: - Create Game
-    /// The game initialization with number of pairs of cards
+    /// The game initialisation with number of pairs of cards
     private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
     /// The number of pairs of cards, which is calculated based on the count of buttons
@@ -47,7 +47,6 @@ class ViewController: UIViewController {
     }
     
     
-    
     // MARK: - Card
     /// The array of cards that we get from the View
     @IBOutlet private var сardButtons: [UIButton]!
@@ -78,8 +77,6 @@ class ViewController: UIViewController {
             }
         }
     }
-
-    
 }
 
 
