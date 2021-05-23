@@ -8,7 +8,19 @@
 import Foundation
 
 
-struct Card {
+struct Card: Hashable {
+    
+    // MARK: Implementation Protocols
+    // Implementation protocol Equatable
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.identifier == rhs.identifier
+    }
+    
+    // Implementation protocol Hashable
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(identifier)
+    }
+    
     
     // MARK: - Variables
     var isFaceUp = false
@@ -32,3 +44,4 @@ struct Card {
         identifier = Card.getUniqueIdentifier()
     }
 }
+

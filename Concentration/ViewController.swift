@@ -34,16 +34,16 @@ class ViewController: UIViewController {
     // MARK: - Emoji
     /// Array of emoji for cards
     private var emojiChoices = ["👻", "🎃", "🧟‍♂️", "🧛🏿‍♂️", "😺", "😈"]
-    private var emoji = [Int: String]()
+    private var emoji = [Card: String]()
     
     /// By identifier card, select from an array of emoji and place it on the card.
     /// - Parameter card: current card
     /// - Returns: return emoji
     private func emoji(for card: Card) -> String {
-        if emoji[card.identifier] == nil, emojiChoices.count > 0 {
-            emoji[card.identifier] = emojiChoices.remove(at: emojiChoices.count.random)
+        if emoji[card] == nil, emojiChoices.count > 0 {
+            emoji[card] = emojiChoices.remove(at: emojiChoices.count.random)
         }
-        return emoji[card.identifier] ?? "?"
+        return emoji[card] ?? "?"
     }
     
     
