@@ -20,15 +20,25 @@ class ViewController: UIViewController {
     
     
     // MARK: - Counter
-    /// The variable that keeps track of the number of card flips
-    private(set) var flipCount = 0 {
+    /// Shows the number of card flips
+    @IBOutlet private weak var flipCountLabel: UILabel! {
         didSet {
-            flipCountLabel.text = "Flips: \(flipCount)"
+            updateFlipCountLabel()
         }
     }
     
-    /// Shows the number of card flips
-    @IBOutlet private weak var flipCountLabel: UILabel!
+    /// The variable that keeps track of the number of card flips
+    var flipCount = 0 {
+        didSet {
+            updateFlipCountLabel()
+        }
+    }
+    
+    private func updateFlipCountLabel() {
+        let attributes: [NSAttributedString.Key: Any] = [.strokeWidth: 5.0, .strokeColor: UIColor.orange]
+        let attributedString = NSAttributedString(string: "Flips: \(flipCount)", attributes: attributes)
+        flipCountLabel.attributedText = attributedString
+    }
     
     
     // MARK: - Emoji
@@ -42,7 +52,6 @@ class ViewController: UIViewController {
     private func emoji(for card: Card) -> String {
         if emoji[card] == nil, emojiChoices.count > 0 {
             let randomStringIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy: emojiChoices.count.random)
-            print(randomStringIndex)
             emoji[card] = String(emojiChoices.remove(at: randomStringIndex))
         }
         return emoji[card] ?? "?"
