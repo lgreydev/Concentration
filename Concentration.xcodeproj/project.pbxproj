@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5E41F1342643F111005299DA /* Int+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E41F1332643F111005299DA /* Int+random.swift */; };
+		5E77AAF8274713D90054FFF7 /* License in Resources */ = {isa = PBXBuildFile; fileRef = 5E77AAF7274713D90054FFF7 /* License */; };
 		5E9968C8262EDCA700C99CE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9968C7262EDCA700C99CE9 /* AppDelegate.swift */; };
 		5E9968CA262EDCA700C99CE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9968C9262EDCA700C99CE9 /* SceneDelegate.swift */; };
 		5E9968CC262EDCA700C99CE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9968CB262EDCA700C99CE9 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		5E41F1332643F111005299DA /* Int+random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+random.swift"; sourceTree = "<group>"; };
+		5E77AAF7274713D90054FFF7 /* License */ = {isa = PBXFileReference; lastKnownFileType = text; path = License; sourceTree = "<group>"; };
 		5E9968C4262EDCA700C99CE9 /* Concentration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concentration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E9968C7262EDCA700C99CE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E9968C9262EDCA700C99CE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 		5E9968BB262EDCA700C99CE9 = {
 			isa = PBXGroup;
 			children = (
+				5E77AAF7274713D90054FFF7 /* License */,
 				5E9968DC262EDCFA00C99CE9 /* README.md */,
 				5E9968DF262EE17100C99CE9 /* .gitignore */,
 				5E9968C6262EDCA700C99CE9 /* Concentration */,
@@ -147,6 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E77AAF8274713D90054FFF7 /* License in Resources */,
 				5E9968E0262EE17100C99CE9 /* .gitignore in Resources */,
 				5E9968D4262EDCAB00C99CE9 /* LaunchScreen.storyboard in Resources */,
 				5E9968D1262EDCAB00C99CE9 /* Assets.xcassets in Resources */,
