@@ -10,7 +10,7 @@ import Foundation
 
 struct Concentration {
     
-    // MARK: - Card
+    // MARK: Private Properties
     private(set) var cards = [Card]()
     
     private var indexOfOneAndOnlyFaceUpCard: Int? {
@@ -21,10 +21,19 @@ struct Concentration {
             for index in cards.indices {
                 cards[index].isFaceUp = (index == newValue)
             }
-            
         }
     }
     
+    // MARK: Initializers
+    init(numberOfPairsOfCards: Int) {
+        assert(numberOfPairsOfCards > 0, "You need at least one pair of cards to play, numberOfPairsOfCards = \(numberOfPairsOfCards)")
+        for _ in 1...numberOfPairsOfCards {
+            let card = Card()
+            cards += [card, card]
+        }
+    }
+    
+    // MARK: Public Methods
     mutating func chooseCard(at index: Int) {
         assert(cards.indices.contains(index), "is not index \(index)")
         if !cards[index].isMatched {
@@ -39,20 +48,9 @@ struct Concentration {
             }
         }
     }
-    
-    
-    // MARK: - Init
-    init(numberOfPairsOfCards: Int) {
-        assert(numberOfPairsOfCards > 0, "You need at least one pair of cards to play, numberOfPairsOfCards = \(numberOfPairsOfCards)")
-        for _ in 1...numberOfPairsOfCards {
-            let card = Card()
-            cards += [card, card]
-        }                           
-    }
 }
 
-
-// MARK: - Extension
+// MARK: Extension
 extension Collection {
     var oneAndOnly: Element? {
         count == 1 ? first : nil
