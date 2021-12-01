@@ -9,17 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // MARK: - Create Game
-    /// The game initialisation with number of pairs of cards
-    private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+    // MARK: IBOutlets
+    /// The array of cards that we get from the View
+    @IBOutlet private var сardButtons: [UIButton]!
     
-    /// The number of pairs of cards, which is calculated based on the count of buttons
-    var numberOfPairsOfCards: Int {
-        return сardButtons.count / 2
-    }
-    
-    
-    // MARK: - Counter
     /// Shows the number of card flips
     @IBOutlet private weak var flipCountLabel: UILabel! {
         didSet {
@@ -27,24 +20,32 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK: Private Properties
+    /// The game initialisation with number of pairs of cards
+    private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+    
+    /// String of emoji for cards
+    private var emojiChoices = "👻🎃🧟‍♂️🧛🏿‍♂️😺😈"
+    private var emoji = [Card: String]()
+    
+    /// The number of pairs of cards, which is calculated based on the count of buttons
+    private var numberOfPairsOfCards: Int {
+        return сardButtons.count / 2
+    }
+    
     /// The variable that keeps track of the number of card flips
-    var flipCount = 0 {
+    private var flipCount = 0 {
         didSet {
             updateFlipCountLabel()
         }
     }
     
+    // MARK: Private Methods
     private func updateFlipCountLabel() {
         let attributes: [NSAttributedString.Key: Any] = [.strokeWidth: 5.0, .strokeColor: UIColor.orange]
         let attributedString = NSAttributedString(string: "Flips: \(flipCount)", attributes: attributes)
         flipCountLabel.attributedText = attributedString
     }
-    
-    
-    // MARK: - Emoji
-    /// String of emoji for cards
-    private var emojiChoices = "👻🎃🧟‍♂️🧛🏿‍♂️😺😈"
-    private var emoji = [Card: String]()
     
     /// By identifier card, select from an array of emoji and place it on the card.
     /// - Parameter card: current card
@@ -57,22 +58,6 @@ class ViewController: UIViewController {
         return emoji[card] ?? "?"
     }
     
-    
-    // MARK: - Card
-    /// The array of cards that we get from the View
-    @IBOutlet private var сardButtons: [UIButton]!
-    
-    /// Call a function that flips the card
-    @IBAction private func touchCard(_ sender: UIButton) {
-        flipCount += 1
-        if let cardNumber = сardButtons.firstIndex(of: sender) {
-            game.chooseCard(at: cardNumber)
-            updateViewFromModel()
-        }
-    }
-    
-    
-    // MARK: - Update View
     private func updateViewFromModel() {
         for index in сardButtons.indices {
             let button = сardButtons[index]
@@ -86,6 +71,16 @@ class ViewController: UIViewController {
                 button.backgroundColor
                     = card.isMatched ? UIColor.black.withAlphaComponent(0) : UIColor.systemOrange
             }
+        }
+    }
+    
+    // MARK: IBActions
+    /// Call a function that flips the card
+    @IBAction private func touchCard(_ sender: UIButton) {
+        flipCount += 1
+        if let cardNumber = сardButtons.firstIndex(of: sender) {
+            game.chooseCard(at: cardNumber)
+            updateViewFromModel()
         }
     }
 }
