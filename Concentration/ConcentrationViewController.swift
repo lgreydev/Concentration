@@ -15,9 +15,7 @@ class ConcentrationViewController: UIViewController {
     
     /// Shows the number of card flips
     @IBOutlet private weak var flipCountLabel: UILabel! {
-        didSet {
-            updateFlipCountLabel()
-        }
+        didSet { updateFlipCountLabel() }
     }
     
     // MARK: Private Properties
@@ -35,9 +33,7 @@ class ConcentrationViewController: UIViewController {
     
     /// The variable that keeps track of the number of card flips
     private var flipCount = 0 {
-        didSet {
-            updateFlipCountLabel()
-        }
+        didSet { updateFlipCountLabel() }
     }
     
     // Theme View Controller
@@ -51,7 +47,7 @@ class ConcentrationViewController: UIViewController {
     
     // MARK: Private Methods
     private func updateFlipCountLabel() {
-        let attributes: [NSAttributedString.Key: Any] = [.strokeWidth: 5.0, .strokeColor: UIColor.orange]
+        let attributes: [NSAttributedString.Key: Any] = [.strokeWidth: 5.0, .strokeColor: UIColor.black]
         let attributedString = NSAttributedString(string: "Flips: \(flipCount)", attributes: attributes)
         flipCountLabel.attributedText = attributedString
     }
@@ -74,11 +70,11 @@ class ConcentrationViewController: UIViewController {
             
             if card.isFaceUp {
                 button.setTitle(emoji(for: card), for: .normal)
-                button.backgroundColor = .white
+                button.backgroundColor = CustomColor.grey
             } else {
                 button.setTitle("", for: .normal)
                 button.backgroundColor
-                    = card.isMatched ? UIColor.black.withAlphaComponent(0) : UIColor.systemOrange
+                = card.isMatched ? CustomColor.clear : CustomColor.blue
             }
         }
     }
@@ -91,6 +87,15 @@ class ConcentrationViewController: UIViewController {
             game.chooseCard(at: cardNumber)
             updateViewFromModel()
         }
+    }
+}
+
+// MARK: - Constants
+extension ConcentrationViewController {
+    private struct CustomColor {
+        static let blue = UIColor(red: 0.0, green: 0.58980089430000004, blue: 1.0, alpha: 1)
+        static let grey = UIColor(red: 0.92143100499999997, green: 0.92145264149999995, blue: 0.92144101860000005, alpha: 1)
+        static let clear = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0)
     }
 }
 
