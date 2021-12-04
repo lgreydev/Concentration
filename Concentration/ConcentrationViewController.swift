@@ -40,6 +40,15 @@ class ConcentrationViewController: UIViewController {
         }
     }
     
+    // Theme View Controller
+    private var theme: String? {
+        didSet {
+            emojiChoices = theme ?? ""
+            emoji = [:]
+            updateViewFromModel()
+        }
+    }
+    
     // MARK: Private Methods
     private func updateFlipCountLabel() {
         let attributes: [NSAttributedString.Key: Any] = [.strokeWidth: 5.0, .strokeColor: UIColor.orange]
