@@ -17,18 +17,59 @@
                     <view key="view" contentMode="scaleToFill" id="RVR-PM-UP5">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5no-Xe-mHE">
+                                <rect key="frame" x="112.33333333333333" y="321" width="165.33333333333337" height="202"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6DG-I1-Vcf">
+                                        <rect key="frame" x="0.0" y="0.0" width="165.33333333333334" height="62"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Sports">
+                                            <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="40"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="00l-71-TFL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcJ-4T-Smt">
+                                        <rect key="frame" x="0.0" y="70" width="165.33333333333334" height="62"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Faces">
+                                            <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="40"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="cbR-bZ-ShN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugd-QX-XnD">
+                                        <rect key="frame" x="0.0" y="140" width="165.33333333333334" height="62"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Animals">
+                                            <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="40"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="bcY-jx-HLs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dcn-5a-4Mt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5no-Xe-mHE" firstAttribute="centerY" secondItem="RVR-PM-UP5" secondAttribute="centerY" id="Ybi-FK-De6"/>
+                            <constraint firstItem="5no-Xe-mHE" firstAttribute="centerX" secondItem="RVR-PM-UP5" secondAttribute="centerX" id="r6r-2b-MKZ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0pB-fu-XA1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-762" y="72"/>
+            <point key="canvasLocation" x="-922" y="72"/>
         </scene>
         <!--Concentration View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ConcentrationViewController" customModule="Concentration" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ConcentrationViewController" customModule="Concentration" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -167,6 +208,7 @@
                             <constraint firstItem="gxh-l9-Qdk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="peT-52-Coz"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Edb-1Y-gjB"/>
                     <connections>
                         <outlet property="flipCountLabel" destination="r3g-df-TJ1" id="sCZ-df-ubu"/>
                         <outletCollection property="сardButtons" destination="QnB-7x-OrY" collectionClass="NSMutableArray" id="9T8-yU-9fx"/>
@@ -188,6 +230,9 @@
             <point key="canvasLocation" x="-23.076923076923077" y="71.800947867298575"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="00l-71-TFL"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
