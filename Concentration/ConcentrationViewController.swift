@@ -36,8 +36,9 @@ class ConcentrationViewController: UIViewController {
         didSet { updateFlipCountLabel() }
     }
     
+    // MARK: Public Properties
     // Theme View Controller
-    private var theme: String? {
+    var theme: String? {
         didSet {
             emojiChoices = theme ?? ""
             emoji = [:]
@@ -64,17 +65,19 @@ class ConcentrationViewController: UIViewController {
     }
     
     private func updateViewFromModel() {
-        for index in сardButtons.indices {
-            let button = сardButtons[index]
-            let card = game.cards[index]
-            
-            if card.isFaceUp {
-                button.setTitle(emoji(for: card), for: .normal)
-                button.backgroundColor = CustomColor.grey
-            } else {
-                button.setTitle("", for: .normal)
-                button.backgroundColor
-                = card.isMatched ? CustomColor.clear : CustomColor.blue
+        if сardButtons != nil {
+            for index in сardButtons.indices {
+                let button = сardButtons[index]
+                let card = game.cards[index]
+                
+                if card.isFaceUp {
+                    button.setTitle(emoji(for: card), for: .normal)
+                    button.backgroundColor = CustomColor.grey
+                } else {
+                    button.setTitle("", for: .normal)
+                    button.backgroundColor
+                    = card.isMatched ? CustomColor.clear : CustomColor.blue
+                }
             }
         }
     }
