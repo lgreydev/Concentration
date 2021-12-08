@@ -66,6 +66,56 @@
             </objects>
             <point key="canvasLocation" x="6.1538461538461533" y="71.800947867298575"/>
         </scene>
+        <!--Item 2-->
+        <scene sceneID="Kya-Q2-2ho">
+            <objects>
+                <viewController id="zjQ-EF-oHF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dTE-OJ-KYn">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gRE-JO-gee"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="EXB-Tu-Xmn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sSN-tD-2H6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-973" y="2003"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="JO9-aS-MMD">
+            <objects>
+                <viewController id="1LD-1j-oMN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PoO-gI-a1Q">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="9br-Ak-qHU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="RBc-Va-0zu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4f0-Bm-mwi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-973" y="1358"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Og5-kD-dXZ">
+            <objects>
+                <tabBarController id="PeT-Ka-h1V" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qul-Dl-zLP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="1LD-1j-oMN" kind="relationship" relationship="viewControllers" id="Sii-gV-sK7"/>
+                        <segue destination="zjQ-EF-oHF" kind="relationship" relationship="viewControllers" id="x3b-QL-wuO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CKX-HB-e1v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1929" y="1674"/>
+        </scene>
         <!--Concentration View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -250,13 +300,13 @@
         <!--Split View Controller-->
         <scene sceneID="u1z-VY-yEB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wly-Ov-ubh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <splitViewController allowDoubleColumnStyle="YES" id="YI7-Y9-ADV" sceneMemberID="viewController">
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="detailViewController" id="d78-PR-GxK"/>
                         <segue destination="qCn-kQ-EiZ" kind="relationship" relationship="masterViewController" id="ABv-cK-q6d"/>
                     </connections>
                 </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wly-Ov-ubh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1659" y="573"/>
         </scene>
