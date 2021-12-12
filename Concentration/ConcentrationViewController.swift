@@ -48,7 +48,7 @@ class ConcentrationViewController: UIViewController {
     
     // MARK: Private Methods
     private func updateFlipCountLabel() {
-        let attributes: [NSAttributedString.Key: Any] = [.strokeWidth: 5.0, .strokeColor: UIColor.black]
+        let attributes: [NSAttributedString.Key: Any] = [.strokeWidth: 2.0, .strokeColor: UIColor.black]
         let attributedString = NSAttributedString(string: "Flips: \(flipCount)", attributes: attributes)
         flipCountLabel.attributedText = attributedString
     }
