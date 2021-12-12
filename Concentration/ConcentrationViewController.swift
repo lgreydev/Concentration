@@ -23,7 +23,7 @@ class ConcentrationViewController: UIViewController {
     private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
     /// String of emoji for cards
-    private var emojiChoices = "👻🎃🧟‍♂️🧛🏿‍♂️😺😈"
+    private var emojiChoices = "👻🎃🧟‍♂️🧛🏿‍♂️😺😈👽"
     private var emoji = [Card: String]()
     
     /// The number of pairs of cards, which is calculated based on the count of buttons
