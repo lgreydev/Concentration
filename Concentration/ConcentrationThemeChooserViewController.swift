@@ -15,6 +15,10 @@ class ConcentrationThemeChooserViewController: UIViewController {
         "Animals": "🐈‍⬛🐕🐿🐁🐂🦝🐍🐎🦍🐘🦆🐌🦅🦇🦜🦏🦞🦒🦈",
         "Faces": "🥰🥺🥳🤭🥴🤩🥵🤓🥶🥸🥱😭🤣😱😎",
     ]
+    
+    private var splitViewDetailConcentrationViewController: ConcentrationViewController? {
+        return splitViewController?.viewControllers.last as? ConcentrationViewController
+    }
 
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -24,6 +28,17 @@ class ConcentrationThemeChooserViewController: UIViewController {
                     cvc.theme = theme
                 }
             }
+        }
+    }
+    
+    // MARK: IBAction
+    @IBAction func changeTheme(_ sender: Any) {
+        if let cvc = splitViewDetailConcentrationViewController {
+            if let themeName = (sender as? UIButton)?.titleLabel?.text, let theme = themes[themeName] {
+                cvc.theme = theme
+            }
+        } else {
+            performSegue(withIdentifier: "ChooseTheme", sender: sender)
         }
     }
 }

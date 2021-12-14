@@ -27,7 +27,7 @@
                                             <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="40"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="ChooseTheme" id="Zch-JD-DLi"/>
+                                            <action selector="changeTheme:" destination="bGG-Wx-RSZ" eventType="touchUpInside" id="SCH-iF-WsT"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcJ-4T-Smt">
@@ -37,7 +37,7 @@
                                             <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="40"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="ChooseTheme" id="lxa-ql-GZ1"/>
+                                            <action selector="changeTheme:" destination="bGG-Wx-RSZ" eventType="touchUpInside" id="Zha-AJ-XSs"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugd-QX-XnD">
@@ -47,7 +47,7 @@
                                             <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="40"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="ChooseTheme" id="MYq-Ge-ppe"/>
+                                            <action selector="changeTheme:" destination="bGG-Wx-RSZ" eventType="touchUpInside" id="qDf-xT-oHE"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -61,6 +61,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eOD-cd-FSc"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="ChooseTheme" id="aIN-yO-Hay"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0pB-fu-XA1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,9 +111,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="YI7-Y9-ADV" kind="relationship" relationship="viewControllers" id="38T-e2-ll2"/>
                         <segue destination="1LD-1j-oMN" kind="relationship" relationship="viewControllers" id="Sii-gV-sK7"/>
                         <segue destination="zjQ-EF-oHF" kind="relationship" relationship="viewControllers" id="x3b-QL-wuO"/>
-                        <segue destination="YI7-Y9-ADV" kind="relationship" relationship="viewControllers" id="38T-e2-ll2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKX-HB-e1v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -278,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6" y="868"/>
+            <point key="canvasLocation" x="6" y="774"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uDA-Mu-FRR">
