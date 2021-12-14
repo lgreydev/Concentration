@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YI7-Y9-ADV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PeT-Ka-h1V">
     <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="bGG-Wx-RSZ" customClass="ConcentrationThemeChooserViewController" customModule="Concentration" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RVR-PM-UP5">
-                        <rect key="frame" x="0.0" y="0.0" width="420" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5no-Xe-mHE">
-                                <rect key="frame" x="127.5" y="582" width="165.5" height="202"/>
+                                <rect key="frame" x="429.5" y="582" width="165.5" height="202"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6DG-I1-Vcf">
                                         <rect key="frame" x="0.0" y="0.0" width="165.5" height="62"/>
@@ -80,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sSN-tD-2H6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-973" y="2003"/>
+            <point key="canvasLocation" x="-2214" y="1259"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="JO9-aS-MMD">
@@ -96,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4f0-Bm-mwi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-973" y="1358"/>
+            <point key="canvasLocation" x="-3052" y="1259"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Og5-kD-dXZ">
@@ -110,11 +110,12 @@
                     <connections>
                         <segue destination="1LD-1j-oMN" kind="relationship" relationship="viewControllers" id="Sii-gV-sK7"/>
                         <segue destination="zjQ-EF-oHF" kind="relationship" relationship="viewControllers" id="x3b-QL-wuO"/>
+                        <segue destination="YI7-Y9-ADV" kind="relationship" relationship="viewControllers" id="38T-e2-ll2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKX-HB-e1v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1929" y="1674"/>
+            <point key="canvasLocation" x="-2610" y="573"/>
         </scene>
         <!--Concentration View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -241,7 +242,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flips: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3g-df-TJ1">
-                                <rect key="frame" x="451" y="1318" width="122.5" height="48"/>
+                                <rect key="frame" x="451" y="1268" width="122.5" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -285,7 +286,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qCn-kQ-EiZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ao4-Vp-vBe">
-                        <rect key="frame" x="0.0" y="20" width="420" height="50"/>
+                        <rect key="frame" x="0.0" y="20" width="1024" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -297,10 +298,11 @@
             </objects>
             <point key="canvasLocation" x="-828" y="72"/>
         </scene>
-        <!--Split View Controller-->
+        <!--Concentration-->
         <scene sceneID="u1z-VY-yEB">
             <objects>
                 <splitViewController allowDoubleColumnStyle="YES" id="YI7-Y9-ADV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Concentration" id="RZz-vF-5dj"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="detailViewController" id="d78-PR-GxK"/>
                         <segue destination="qCn-kQ-EiZ" kind="relationship" relationship="masterViewController" id="ABv-cK-q6d"/>
@@ -312,7 +314,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Zch-JD-DLi"/>
+        <segue reference="d78-PR-GxK"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
