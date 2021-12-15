@@ -19,6 +19,8 @@ class ConcentrationThemeChooserViewController: UIViewController {
     private var splitViewDetailConcentrationViewController: ConcentrationViewController? {
         return splitViewController?.viewControllers.last as? ConcentrationViewController
     }
+    
+    private var lastSeguedToConcentrationViewController: ConcentrationViewController?
 
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -26,6 +28,7 @@ class ConcentrationThemeChooserViewController: UIViewController {
             if let themeName = (sender as? UIButton)?.titleLabel?.text, let theme = themes[themeName] {
                 if let cvc = segue.destination as? ConcentrationViewController {
                     cvc.theme = theme
+                    lastSeguedToConcentrationViewController = cvc
                 }
             }
         }
@@ -37,6 +40,12 @@ class ConcentrationThemeChooserViewController: UIViewController {
             if let themeName = (sender as? UIButton)?.titleLabel?.text, let theme = themes[themeName] {
                 cvc.theme = theme
             }
+        } else if let cvc = lastSeguedToConcentrationViewController {
+            if let themeName = (sender as? UIButton)?.titleLabel?.text, let theme = themes[themeName] {
+                cvc.theme = theme
+            }
+            navigationController?.pushViewController(cvc, animated: true)
+            
         } else {
             performSegue(withIdentifier: "ChooseTheme", sender: sender)
         }
