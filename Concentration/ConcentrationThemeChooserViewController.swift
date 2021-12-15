@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ConcentrationThemeChooserViewController: UIViewController {
+class ConcentrationThemeChooserViewController: UIViewController, UISplitViewControllerDelegate {
     
     // MARK: Private Properties
     private let themes = [
@@ -21,7 +21,28 @@ class ConcentrationThemeChooserViewController: UIViewController {
     }
     
     private var lastSeguedToConcentrationViewController: ConcentrationViewController?
-
+    
+    private weak var timer: Timer?
+    
+    
+    // TODO
+    override func viewDidLoad() {
+        splitViewController?.delegate = self
+    }
+    
+    // TODO
+    func splitViewController(
+        _ splitViewController: UISplitViewController,
+        collapseSecondary secondaryViewController: UIViewController,
+        onto primaryViewController: UIViewController) -> Bool {
+            if let cvc = secondaryViewController as? ConcentrationViewController {
+                if cvc.theme == nil {
+                    return true
+                }
+            }
+            return false
+        }
+    
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ChooseTheme" {
