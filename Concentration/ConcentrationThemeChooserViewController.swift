@@ -23,14 +23,20 @@ class ConcentrationThemeChooserViewController: VCLLoggingViewController, UISplit
     private var lastSeguedToConcentrationViewController: ConcentrationViewController?
     
     private weak var timer: Timer?
-    
+
+    // The name of the View Controller​ where we are
+    override var vclLoggingName: String {
+         return "ThemeChooser"
+    }
+
+
     
     // TODO
     override func viewDidLoad() {
         super.awakeFromNib()
         splitViewController?.delegate = self
     }
-    
+
     // TODO
     func splitViewController(
         _ splitViewController: UISplitViewController,

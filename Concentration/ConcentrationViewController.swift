@@ -45,6 +45,11 @@ class ConcentrationViewController: VCLLoggingViewController {
             updateViewFromModel()
         }
     }
+
+    // The name of the View Controller​ where we are 
+    override var vclLoggingName: String {
+        return "game"
+    }
     
     // MARK: Private Methods
     private func updateFlipCountLabel() {
