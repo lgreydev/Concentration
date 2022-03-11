@@ -64,18 +64,18 @@ class ConcentrationThemeChooserViewController: VCLLoggingViewController, UISplit
     
     // MARK: IBAction
     @IBAction func changeTheme(_ sender: Any) {
-        if let cvc = splitViewDetailConcentrationViewController {
-            if let themeName = (sender as? UIButton)?.titleLabel?.text, let theme = themes[themeName] {
-                cvc.theme = theme
-            }
-        } else if let cvc = lastSeguedToConcentrationViewController {
-            if let themeName = (sender as? UIButton)?.titleLabel?.text, let theme = themes[themeName] {
-                cvc.theme = theme
-            }
-            navigationController?.pushViewController(cvc, animated: true)
-            
-        } else {
+//        if let cvc = splitViewDetailConcentrationViewController {
+//            if let themeName = (sender as? UIButton)?.titleLabel?.text, let theme = themes[themeName] {
+//                cvc.theme = theme
+//            }
+//        } else if let cvc = lastSeguedToConcentrationViewController {
+//            if let themeName = (sender as? UIButton)?.titleLabel?.text, let theme = themes[themeName] {
+//                cvc.theme = theme
+//            }
+//            navigationController?.pushViewController(cvc, animated: true)
+//
+//        } else {
             performSegue(withIdentifier: "ChooseTheme", sender: sender)
-        }
+//        }
     }
 }
