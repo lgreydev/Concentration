@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ConcentrationThemeChooserViewController: UIViewController, UISplitViewControllerDelegate {
+class ConcentrationThemeChooserViewController: VCLLoggingViewController, UISplitViewControllerDelegate {
     
     // MARK: Private Properties
     private let themes = [
@@ -27,6 +27,7 @@ class ConcentrationThemeChooserViewController: UIViewController, UISplitViewCont
     
     // TODO
     override func viewDidLoad() {
+        super.awakeFromNib()
         splitViewController?.delegate = self
     }
     

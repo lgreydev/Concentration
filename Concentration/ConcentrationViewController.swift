@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ConcentrationViewController: UIViewController {
+class ConcentrationViewController: VCLLoggingViewController {
     
     // MARK: IBOutlets
     /// The array of cards that we get from the View
