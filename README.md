@@ -1,10 +1,14 @@
-### App on development stage....
-
-
 # Concentration
 
-The Concentration game is a card game. On the cards that are "face down", there are pictures, and the goal is that you have to open the cards, the pictures are the same.
+The Concentration game is a card game. The goal of the game is to select two identical cards.
 
+## Functionality used
+ - Auto Layout
+ - Dynamic themes
+ - Logging View Controller
+ 
+ ## iPhone
+ <img src="https://github.com/lgreydev/Concentration/blob/main/Screenshots/001.jpg" width="250"><img src="https://github.com/lgreydev/Concentration/blob/main/Screenshots/002.jpg" width="250"><img src="https://github.com/lgreydev/Concentration/blob/main/Screenshots/003.jpg" width="250">
 
 ### 🛡️ License
 
